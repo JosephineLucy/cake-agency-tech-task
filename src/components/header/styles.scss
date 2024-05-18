@@ -1,0 +1,11 @@
+.app-header {
+  display: flex;
+  border-bottom: 1px white solid;
+  height: 60px;
+  box-sizing: border-box;
+
+  &__title {
+    padding-left: 10px;
+    color: white;
+  }
+}
