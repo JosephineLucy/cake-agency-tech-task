@@ -1,4 +1,4 @@
-# Tech Task - Calcuate the average order value
+# Tech Task - Calculate the average order value
 
 I hope you enjoy!
 
