@@ -4,15 +4,15 @@ import { fetchOrders } from "../../helpers/fetch-orders";
 import "./styles.scss";
 import AverageValue from "../average-value/AverageValue";
 
-const Average = () => {
+const AverageCalculator = () => {
   const [orders, setOrders] = useState<null | OrderResponse>(null);
 
   return (
-    <main className="average">
+    <main className="average-calculator">
       <AverageValue value={21} />
-      <button onClick={fetchOrders}>Fetch Orders</button>
+      <button>Fetch Orders</button>
     </main>
   );
 };
 
-export default Average;
+export default AverageCalculator;
