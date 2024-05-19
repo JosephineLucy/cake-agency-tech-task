@@ -1,7 +1,12 @@
 .average-calculator {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px white solid;
-  height: 800px;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
   box-sizing: border-box;
+
+  &__button {
+    max-width: 250px;
+  }
 }
