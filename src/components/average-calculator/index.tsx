@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { OrderResponse } from "../../types/orderService";
-import { fetchOrders } from "./fetch-orders";
+import { fetchOrders } from "./helpers/helpers";
 import "./styles.scss";
 import AverageValue from "../average-value/AverageValue";
 

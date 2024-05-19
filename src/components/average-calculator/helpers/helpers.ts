@@ -1,5 +1,5 @@
-import { ordersService } from "../../services/orders";
-import { Order, OrderResponse } from "../../types/orderService";
+import { ordersService } from "../../../services/orders";
+import { Order, OrderResponse } from "../../../types/orderService";
 
 export function fetchOrders(): Promise<OrderResponse> {
   return ordersService
