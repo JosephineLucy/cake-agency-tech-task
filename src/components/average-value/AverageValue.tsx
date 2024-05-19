@@ -5,7 +5,15 @@ type AverageValueProps = {
 };
 
 const AverageValue: React.FC<AverageValueProps> = ({ value }) => {
-  return <p className="average-value">{`Average Order Value = £${value}`}</p>;
+  if (value) {
+    return <p className="average-value">{`Average Order Value = £${value}`}</p>;
+  }
+
+  return (
+    <p className="average-value">
+      Click the button below to get order average!
+    </p>
+  );
 };
 
 export default AverageValue;
