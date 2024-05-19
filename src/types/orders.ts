@@ -2,7 +2,7 @@ export type OrderResponse = {
   orders: OrderList;
 };
 
-type OrderList = Order[];
+export type OrderList = Order[];
 
 export type Order = {
   id: string;
@@ -13,7 +13,7 @@ export type Order = {
 
 type Item = {
   name: string;
-  price: number;
+  price: string;
   sku: string;
 };
 

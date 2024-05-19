@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { OrderResponse } from "../../types/orderService";
-import { fetchOrders } from "./helpers/helpers";
+import { OrderList, OrderResponse } from "../../types/orders";
+import { calculateOrderAverage, fetchOrders } from "./helpers/helpers";
 import "./styles.scss";
 import AverageValue from "../average-value/AverageValue";
 
 const AverageCalculator = () => {
-  const [orders, setOrders] = useState<null | OrderResponse>(null);
+  const [orders, setOrders] = useState<OrderResponse | null>(null);
+  const [orderAverage, setOrderAverage] = useState<number | null>(null);
 
   const onClick = async () => {
-    const orders = await fetchOrders();
-    console.log(orders, "orders");
+    const orders: OrderList = await fetchOrders();
+    const orderAverage: number = calculateOrderAverage(orders);
+    console.log(orders, "<< orders");
+    console.log(orderAverage, "<< average");
   };
 
   return (

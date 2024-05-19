@@ -1,4 +1,4 @@
-import { OrderResponse } from "../types/orderService";
+import { OrderResponse } from "../types/orders";
 import { apiServiceInstance } from "./axios";
 
 export const ordersService = {

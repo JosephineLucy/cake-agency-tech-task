@@ -1,11 +1,11 @@
 import { ordersService } from "../../../services/orders";
-import { Order, OrderResponse } from "../../../types/orderService";
+import { Order, OrderList, OrderResponse } from "../../../types/orders";
 
-export function fetchOrders(): Promise<OrderResponse> {
+export function fetchOrders(): Promise<OrderList> {
   return ordersService
     .fetchOrders()
-    .then((orders: OrderResponse) => {
-      return orders;
+    .then((orderResponse: OrderResponse) => {
+      return orderResponse.orders;
     })
     .catch((err) => {
       throw new Error(err);
@@ -15,7 +15,7 @@ export function fetchOrders(): Promise<OrderResponse> {
 export function getOrderTotal(order: Order): number {
   const { items } = order;
   const orderTotal = items.reduce(
-    (totalValue, item) => totalValue + item.price,
+    (totalValue, item) => totalValue + parseInt(item.price),
     0
   );
   return orderTotal;
@@ -27,21 +27,28 @@ export function getGrandTotal(orderTotals: number[]): number {
   );
 }
 
-export function getOrderLength(): number {
-  return 5;
+export function getOrderLength(orderList: OrderList): number {
+  return orderList.length;
 }
 
-export function getOrderAverage(): number {
-  /*
+export function getAverage(grandTotal: number, orderLength: number): number {
+  const average: number = grandTotal / orderLength;
 
-  calculate each order's total value = items[0].price +  items[1].price +  items[2].price order total = orderTotal
+  const roundedAverage = Math.round(average * 100) / 100;
 
-  add up each order's total = order total + order total + order total = grandTotal
+  return roundedAverage;
+}
 
-  count how many orders there are = response.orders.length() = numOfOrders
+export function calculateOrderAverage(orderList: OrderList): number {
+  const orderTotals: number[] = orderList.map((order: Order) => {
+    return getOrderTotal(order);
+  });
 
-  calculate the average = grandTotal / numOfOrders
+  const grandTotal: number = getGrandTotal(orderTotals);
 
-  */
-  return 5;
+  const orderLength: number = getOrderLength(orderList);
+
+  const average: number = getAverage(grandTotal, orderLength);
+
+  return average;
 }
