@@ -1,5 +1,5 @@
 import { ordersService } from "../../services/orders";
-import { OrderResponse } from "../../types/orderService";
+import { Order, OrderResponse } from "../../types/orderService";
 
 export function fetchOrders(): Promise<OrderResponse> {
   return ordersService
@@ -12,12 +12,13 @@ export function fetchOrders(): Promise<OrderResponse> {
     });
 }
 
-export function getOrderTotal(): number {
-  // takes an order object
-  // runs through each item in the items array
-  // adds together the price of each item in the array
-  // returns a number
-  return 5;
+export function getOrderTotal(order: Order): number {
+  const { items } = order;
+  const orderTotal = items.reduce(
+    (totalValue, item) => totalValue + item.price,
+    0
+  );
+  return orderTotal;
 }
 
 export function getGrandTotal(): number {

@@ -4,7 +4,7 @@ export type OrderResponse = {
 
 type OrderList = Order[];
 
-type Order = {
+export type Order = {
   id: string;
   created_at: string;
   items: Item[];
