@@ -31,15 +31,15 @@ export function getOrderLength(orderList: OrderList): number {
   return orderList.length;
 }
 
-export function getAverage(grandTotal: number, orderLength: number): number {
+export function getAverage(grandTotal: number, orderLength: number): string {
   const average: number = grandTotal / orderLength;
 
   const roundedAverage = Math.round(average * 100) / 100;
 
-  return roundedAverage;
+  return roundedAverage.toFixed(2);
 }
 
-export function calculateOrderAverage(orderList: OrderList): number {
+export function calculateOrderAverage(orderList: OrderList): string {
   const orderTotals: number[] = orderList.map((order: Order) => {
     return getOrderTotal(order);
   });
@@ -48,7 +48,7 @@ export function calculateOrderAverage(orderList: OrderList): number {
 
   const orderLength: number = getOrderLength(orderList);
 
-  const average: number = getAverage(grandTotal, orderLength);
+  const average: string = getAverage(grandTotal, orderLength);
 
   return average;
 }

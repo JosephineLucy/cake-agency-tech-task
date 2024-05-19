@@ -1,11 +1,11 @@
 import "./styles.scss";
 
 type AverageValueProps = {
-  value: number;
+  value: string;
 };
 
 const AverageValue: React.FC<AverageValueProps> = ({ value }) => {
-  return <p className="average-value">{`Average Order Value = ${value}`}</p>;
+  return <p className="average-value">{`Average Order Value = £${value}`}</p>;
 };
 
 export default AverageValue;

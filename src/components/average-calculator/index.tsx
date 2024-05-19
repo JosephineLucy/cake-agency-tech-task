@@ -1,24 +1,28 @@
 import { useState } from "react";
-import { OrderList, OrderResponse } from "../../types/orders";
+import { OrderList } from "../../types/orders";
 import { calculateOrderAverage, fetchOrders } from "./helpers/helpers";
 import "./styles.scss";
 import AverageValue from "../average-value/AverageValue";
 
 const AverageCalculator = () => {
-  const [orders, setOrders] = useState<OrderResponse | null>(null);
-  const [orderAverage, setOrderAverage] = useState<number | null>(null);
+  const [orderAverage, setOrderAverage] = useState<string>("");
 
   const onClick = async () => {
     const orders: OrderList = await fetchOrders();
-    const orderAverage: number = calculateOrderAverage(orders);
     console.log(orders, "<< orders");
+    const orderAverage: string = calculateOrderAverage(orders);
+    if (orderAverage) {
+      setOrderAverage(orderAverage);
+    }
     console.log(orderAverage, "<< average");
   };
 
   return (
     <main className="average-calculator">
-      <AverageValue value={21} />
-      <button onClick={onClick}>Fetch Orders</button>
+      <AverageValue value={orderAverage} />
+      <button onClick={onClick} aria-label="fetch order average">
+        Fetch Order Average
+      </button>
     </main>
   );
 };
