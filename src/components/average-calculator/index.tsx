@@ -7,10 +7,15 @@ import AverageValue from "../average-value/AverageValue";
 const AverageCalculator = () => {
   const [orders, setOrders] = useState<null | OrderResponse>(null);
 
+  const onClick = async () => {
+    const orders = await fetchOrders();
+    console.log(orders, "orders");
+  };
+
   return (
     <main className="average-calculator">
       <AverageValue value={21} />
-      <button>Fetch Orders</button>
+      <button onClick={onClick}>Fetch Orders</button>
     </main>
   );
 };
