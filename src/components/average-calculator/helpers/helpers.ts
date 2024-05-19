@@ -21,10 +21,10 @@ export function getOrderTotal(order: Order): number {
   return orderTotal;
 }
 
-export function getGrandTotal(): number {
-  // takes an array of numbers and adds them together - use reduce
-  // returns a number
-  return 5;
+export function getGrandTotal(orderTotals: number[]): number {
+  return orderTotals.reduce(
+    (totalValue, orderTotal) => totalValue + orderTotal
+  );
 }
 
 export function getOrderLength(): number {
