@@ -68,7 +68,7 @@ describe("getOrderLength", () => {
 
 describe("getAverage", () => {
   test("when given the grand total and the number of orders, returns the average order value", () => {
-    const expectedOrderAverage = 22.25;
+    const expectedOrderAverage = "22.25";
     const actualOrderAverage = getAverage(89, 4);
 
     expect(actualOrderAverage).toBe(expectedOrderAverage);
@@ -79,7 +79,7 @@ describe("calculateOrderAverage", () => {
   test("when a given list of orders, returns the order average", () => {
     const testOrderList: OrderList = [testOrder, testOrderTwo, testOrderThree];
 
-    const expectedOrderAverage = 28.33;
+    const expectedOrderAverage = "28.33";
     const actualOrderAverage = calculateOrderAverage(testOrderList);
 
     expect(actualOrderAverage).toBe(expectedOrderAverage);
