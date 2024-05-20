@@ -1,9 +1,9 @@
 import "./styles.scss";
-import Header from "./components/header";
-import AverageCalculator from "./components/average-calculator";
+import Header from "./components/Header";
+import AverageCalculator from "./components/AverageCalculator";
 
 import { AppConstants } from "./constants/constants";
-import ErrorBoundary from "./components/error-boundary";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (

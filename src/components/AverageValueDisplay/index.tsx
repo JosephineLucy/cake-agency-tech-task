@@ -6,7 +6,9 @@ type AverageValueDisplayProps = {
 
 const AverageValueDisplay: React.FC<AverageValueDisplayProps> = ({ value }) => {
   if (value) {
-    return <p className="average-value">{`Average Order Value = £${value}`}</p>;
+    return (
+      <p className="average-value-display">{`Average Order Value = £${value}`}</p>
+    );
   }
 
   return (
