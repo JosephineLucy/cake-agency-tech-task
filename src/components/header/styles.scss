@@ -1,11 +1,13 @@
+@use "src/styles/colors";
+
 .app-header {
   display: flex;
-  border-bottom: 1px white solid;
+  border-bottom: 1px colors.$header-border solid;
   height: 20%;
   box-sizing: border-box;
 
   &__title {
     padding-left: 10px;
-    color: white;
+    color: colors.$paragraph-primary-text;
   }
 }

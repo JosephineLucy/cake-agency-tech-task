@@ -1,4 +1,6 @@
+@use "src/styles/colors";
+
 .average-value-display {
-  color: white;
+  color: colors.$paragraph-primary-text;
   max-width: 500px;
 }
