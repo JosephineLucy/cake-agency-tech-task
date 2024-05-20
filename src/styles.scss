@@ -6,7 +6,11 @@ body {
   background-color: colors.$application-background;
 }
 
-h1,
+h1 {
+  font-family: "Poppins";
+  font-weight: 700;
+}
+
 h2 {
   font-family: "Poppins";
   font-weight: 200;

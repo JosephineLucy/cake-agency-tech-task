@@ -1,8 +1,17 @@
 @use "src/styles/colors";
 
 .average-value-display {
-  color: colors.$paragraph-primary-text;
-  font-size: 40px;
   max-width: 500px;
   text-align: center;
+  &__text {
+    color: colors.$paragraph-primary-text;
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+
+  &__value {
+    color: colors.$paragraph-primary-text;
+    font-size: 50px;
+    margin-top: 0;
+  }
 }

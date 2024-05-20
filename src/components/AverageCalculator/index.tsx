@@ -30,10 +30,7 @@ const AverageCalculator = () => {
 
   return (
     <main className="average-calculator">
-      <AverageValueDisplay
-        value={orderAverage}
-        className="average-value-display"
-      />
+      <AverageValueDisplay value={orderAverage} />
       <button
         className="average-calculator__button"
         onClick={onClick}

@@ -2,19 +2,18 @@ import "./styles.scss";
 
 type AverageValueDisplayProps = {
   value: string;
-  className?: string;
 };
 
-const AverageValueDisplay: React.FC<AverageValueDisplayProps> = ({
-  value,
-  className,
-}) => {
-  if (value) {
-    return <p className={className}>{`The order average is £${value}`}</p>;
-  }
+const AverageValueDisplay: React.FC<AverageValueDisplayProps> = ({ value }) => {
+  const displayText = value
+    ? `The order average is`
+    : "Click the button below to get order average!";
 
   return (
-    <p className={className}>Click the button below to get order average!</p>
+    <div className="average-value-display">
+      <h2 className="average-value-display__text">{displayText}</h2>
+      {value && <h1 className="average-value-display__value">{`£${value}`}</h1>}
+    </div>
   );
 };
 
