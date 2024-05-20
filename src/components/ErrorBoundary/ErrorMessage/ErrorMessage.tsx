@@ -1,12 +1,11 @@
 import React from "react";
+import "./styles.scss";
 
 const ErrorMessage: React.FC = () => {
   return (
     <div className="error-message">
-      <h4 style={{ color: "white", textAlign: "center" }}>
-        Oops something went wrong!
-      </h4>
-      <p style={{ color: "white", textAlign: "center" }}>
+      <h4 className="error-message__heading">Oops something went wrong!</h4>
+      <p className="error-message__subheading">
         Please try restarting your browser
       </p>
     </div>

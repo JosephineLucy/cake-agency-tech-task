@@ -1,0 +1,14 @@
+@use "src/styles/colors";
+
+.error-message {
+  font-style: "white";
+  text-align: center;
+
+  &__heading {
+    color: colors.$header-primary-text;
+  }
+
+  &__subheading {
+    color: colors.$header-primary-text;
+  }
+}

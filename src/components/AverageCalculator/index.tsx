@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { calculateOrderAverage, fetchOrders } from "./helpers/helpers";
 import AverageValueDisplay from "../AverageValueDisplay";
-import ErrorMessage from "../ErrorBoundary/ErrorMessage";
+import ErrorMessage from "../ErrorBoundary/ErrorMessage/ErrorMessage";
 import "./styles.scss";
 
 const AverageCalculator = () => {

@@ -17,13 +17,14 @@
     font-family: "Poppins";
     font-weight: 700;
     margin-top: 20px;
-    background-color: colors.$application-background;
-    color: colors.$button-primary-background;
+    color: colors.$button-primary-text;
+    background-color: colors.$button-primary-background;
     cursor: pointer;
+    box-shadow: 0;
   }
 
   &__button:hover {
-    color: colors.$application-background;
-    background-color: colors.$paragraph-primary-text;
+    color: colors.$button-primary-text-on-hover;
+    background-color: colors.$button-primary-background-on-hover;
   }
 }
