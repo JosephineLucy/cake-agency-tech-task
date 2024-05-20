@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { calculateOrderAverage, fetchOrders } from "./helpers/helpers";
 import "./styles.scss";
-import AverageValue from "../average-value";
+import AverageValueDisplay from "../AverageValueDisplay";
 import ErrorMessage from "../error-boundary/ErrorMessage";
 
 const AverageCalculator = () => {
@@ -30,7 +30,7 @@ const AverageCalculator = () => {
 
   return (
     <main className="average-calculator">
-      <AverageValue value={orderAverage} />
+      <AverageValueDisplay value={orderAverage} />
       <button
         className="average-calculator__button"
         onClick={onClick}
