@@ -10,7 +10,7 @@ const AverageValueDisplay: React.FC<AverageValueDisplayProps> = ({
   className,
 }) => {
   if (value) {
-    return <p className={className}>{`The order average is... £${value}`}</p>;
+    return <p className={className}>{`The order average is £${value}`}</p>;
   }
 
   return (
