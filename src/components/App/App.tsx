@@ -1,7 +1,8 @@
 import "./styles.scss";
-import AverageCalculator from "./components/AverageCalculator";
+import "../../styles.scss";
+import AverageCalculator from "../AverageCalculator";
 
-import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorBoundary from "../ErrorBoundary";
 
 function App() {
   return (

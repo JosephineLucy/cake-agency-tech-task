@@ -1,7 +1,7 @@
 @use "src/styles/colors";
 
 .average-value-display {
-  max-width: 500px;
+  max-width: 600px;
   text-align: center;
   &__text {
     color: colors.$paragraph-primary-text;
