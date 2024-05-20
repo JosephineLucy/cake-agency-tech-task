@@ -1,3 +1,3 @@
-export const appConstants = {
-  title: "Cake Agency Tech Task",
-};
+export enum AppConstants {
+  title = "Cake Agency Tech Task",
+}

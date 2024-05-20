@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 export const apiServiceInstance = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: import.meta.env.VITE_PROXY_ENDPOINT,
 });
 
 apiServiceInstance.interceptors.response.use(
