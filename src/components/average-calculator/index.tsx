@@ -8,6 +8,10 @@ const AverageCalculator = () => {
   const [orderAverage, setOrderAverage] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
 
+  const buttonText = orderAverage
+    ? "Fetch a new order average"
+    : "Fetch an order average";
+
   const onClick = () => {
     setError(false);
     fetchOrders()
@@ -32,7 +36,7 @@ const AverageCalculator = () => {
         onClick={onClick}
         aria-label="fetch order average"
       >
-        Fetch Order Average
+        {buttonText}
       </button>
     </main>
   );
