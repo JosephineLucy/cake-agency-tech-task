@@ -27,10 +27,6 @@ export function getGrandTotal(orderTotals: number[]): number {
   );
 }
 
-export function getOrderLength(orderList: OrderList): number {
-  return orderList.length;
-}
-
 export function getAverage(grandTotal: number, orderLength: number): string {
   const average: number = grandTotal / orderLength;
 
@@ -46,7 +42,7 @@ export function calculateOrderAverage(orderList: OrderList): string {
 
   const grandTotal: number = getGrandTotal(orderTotals);
 
-  const orderLength: number = getOrderLength(orderList);
+  const orderLength: number = orderList.length;
 
   const average: string = getAverage(grandTotal, orderLength);
 
