@@ -31,11 +31,7 @@ const AverageCalculator = () => {
   return (
     <main className="average-calculator">
       <AverageValueDisplay value={orderAverage} />
-      <button
-        className="average-calculator__button"
-        onClick={onClick}
-        aria-label="fetch order average"
-      >
+      <button className="average-calculator__button" onClick={onClick}>
         {buttonText}
       </button>
     </main>
