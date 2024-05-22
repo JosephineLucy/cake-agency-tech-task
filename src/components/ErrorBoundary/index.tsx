@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
 
   override render() {
     if (this.state.hasError) {
-      return <ErrorMessage /> || this.props.fallback;
+      return this.props.fallback || <ErrorMessage />;
     }
     return this.props.children;
   }
