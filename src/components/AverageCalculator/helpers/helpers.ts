@@ -21,6 +21,12 @@ export function getOrderTotal(order: Order): number {
   return orderTotal;
 }
 
+export function getAllOrderTotals(orderList: OrderList) {
+  return orderList.map((order: Order) => {
+    return getOrderTotal(order);
+  });
+}
+
 export function getGrandTotal(orderTotals: number[]): number {
   return orderTotals.reduce(
     (totalValue, orderTotal) => totalValue + orderTotal
@@ -36,9 +42,7 @@ export function getAverage(grandTotal: number, orderLength: number): string {
 }
 
 export function calculateOrderAverage(orderList: OrderList): string {
-  const orderTotals: number[] = orderList.map((order: Order) => {
-    return getOrderTotal(order);
-  });
+  const orderTotals: number[] = getAllOrderTotals(orderList);
 
   const grandTotal: number = getGrandTotal(orderTotals);
 
