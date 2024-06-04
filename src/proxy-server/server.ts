@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 
-app.get("/", async (_req, res) => {
+app.get("/orders", async (_req, res) => {
   const response = await fetch(endpoint);
   const data = await response.json();
   res.json(await data);
